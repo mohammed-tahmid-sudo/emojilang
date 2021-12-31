@@ -98,3 +98,8 @@ pip install -r requirements.txt
 
     #similarly for other blocks like for and while
 ````
+
+### emoji and keywords
+| EMOJI | UNICODE | KEYWORDS|
+|-------|---------|--------|
+| 1️⃣   |    U+31  |   1     | 
