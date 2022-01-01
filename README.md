@@ -7,9 +7,10 @@ First make sure you have python(version 3.x) and pip installed
 ````bash
     #First Clone It
     git clone https://github.com/grininja/emojilang.git emojilang
-    pip install -r requirements.txt
     #Navigate into the directory
     cd emojilang
+    #Install the requirements
+    pip install -r requirements.txt
 ````
 
 #### Then execute the your source file
