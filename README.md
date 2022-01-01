@@ -6,9 +6,26 @@ Programming language where you can code using emojis 😌
 pip install -r requirements.txt
 ```
 
-### Current Syntax
+### Syntax
 
-#### Operators
+| emoji | Semantic|
+|-------|--------|
+|✖,➕, ➖, ➗, 📎 | *, +, -, / ,% |
+|💿,📀 |while, for |
+| 🚩, 🏁, 🏳 | if ,else, elif |
+| ⏸,⏩| break, continue  |
+|😌,😌😌,😁,😭,😁😌,😭😌,❗😌|=, == ,>, <,>=,<=,!=|
+|⚛ , ☯, ⚓, 〰|(bitwise) &, \|, ^, ~|
+| 😠, 😇, ❗|(logical) and, or, not|
+|💩 comments starts with '💩'|comments|
+|📢|used to declare variable|
+|🖨|print on console|
+|👉, 👈 |(, )|
+|🍽,🥂| {, }|
+|🗿|, (comma)|
+|👄|; (semicolon)|
+|✔, ❌|true, false|
+<!-- #### Operators
 |Operation | Symbol|
 |---------|-----|
 |unary not|not<br>!|
@@ -20,9 +37,9 @@ pip install -r requirements.txt
 |logical and | and <br> &&
 |logical or  | or <br> \|\| |
 |logical not | not <br> !
-|logical xor | xor <br> ^|
+|logical xor | xor <br> ^| -->
 
-#### Operators Precedence
+<!-- #### Operators Precedence
 <mark>Operators With Highest Priority On Top</mark><br>
 |Description|Operators|
 |----|-----|
@@ -34,24 +51,30 @@ pip install -r requirements.txt
 |bitwise xor|^, xor|
 |bitwise or|\||
 |logical and|and, &&|
-|logical or|or, \|\||
+|logical or|or, \|\|| -->
 
-
+### Sample Codes
 #### Variable Declaration
 
 ````
-    decl a
-    decl b=5, c, d=6
-    decl e=5+c*4
-    decl t = true, f
+    📢 a 💩 declares the valriable a
+    📢 b 😌 5🗿 c🗿 d 😌 6 💩 declares a, c, d and assigns them 5, None, 6 respectively 
+    📢 e 😌 5➕c✖4 💩 equivalent to decl e = 5+c*4
+    📢 t 😌 ✔🗿 f 💩 decl t = true, f
 ````
+👉, 👈
 #### Assignments
 ````
-    a = 3
-    b = (c*4)+5 / d
-    f = false
+    a 😌 3
+    b 😌 👉c✖4👈➕5 ➗ d
+    f 😌 ❌
+    💩 Equivalent to
+    💩 a = 3
+    💩 b = (c*4) + 5 / d
+    💩 f = false
+
 ````
-#### Flow Control
+<!-- #### Flow Control
 ````
     while(a <= 5*b){
         #this is how you use comments
@@ -67,8 +90,8 @@ pip install -r requirements.txt
     for( ; ; ){
         #all three statements can be skipped
     }
-````
-#### Branching
+```` -->
+<!-- #### Branching
 ````
     if(a == 5){
         #statements
@@ -81,10 +104,10 @@ pip install -r requirements.txt
     }
     else{
         #statements
-    }
-````
+    } -->
+<!-- ```` -->
 
-### Invalid Syntaxes
+<!-- ### Invalid Syntaxes
 ````
     #INVALID
     if(a==5)
@@ -97,20 +120,60 @@ pip install -r requirements.txt
     
 
     #similarly for other blocks like for and while
+```` -->
+### Fibonacci Series
 ````
+    📢 f0 😌 0 🗿 f1 😌 1
+    📢 i 😌 0
+    💿👉i 😭 10👈🍽
+        🖨👉f0👈
+        📢 tmp 😌 f0
+        f0 😌 f1
+        f1 😌 f1 ➕ tmp
+        i 😌 i ➕ 1
+    🥂
 
-### emoji and keywords
-| EMOJI | UNICODE | KEYWORDS|
-|-------|---------|--------|
-|0️⃣,1️⃣,2️⃣,3️⃣,4️⃣|U+30, U+31, U+32, U+33, U+34| 0,1,2,3,4|
-|5️⃣,6️⃣,7️⃣,8️⃣,9️⃣ | U+35, U+36 U+37,U+38,U+39|5,6,7,8,9 | 
-| ✖️,➕, ➖, ➗,󠀥 󠀥﹪ |  U+2716, U+2795, U+2796,  U+2797 , U+E0025, U+FE6A  | *, +, -, / ,% |
-|🌀,❤️ |U+1F300, U+2764 |while, for |
-| 🔥, 🌊,✨  | U+1F525, U+1F30A, U+2728 | if ,else, elif |
-| 💔, ⚙️ | U+1F494, U+2699  | break, continue  |
-|😐, 😏,😫, 😁,😬, 😶|  U+1F610, U+1F60F, U+1F62B, U+1F601,U+1F62C, U+1F636|= ,>, <,>=,<=,!=|
+💩 Equivalent to
+💩 decl f0 = 0, f1 = 1
+💩 i = 0
+💩 while(i < 10){
+💩    print(f0)
+💩    decl tmp = f0
+💩    f0 = f1
+💩    f1 = f1 + tmp
+💩    i = i + 1
+💩 }
 
+````
+### Prime Numbers
+````
+    📢 start 😌 2 🗿 end 😌 100
+    📀👉📢 n😌start👄n😭😌end👄 n 😌 n➕1👈🍽
+        📢 flag 😌 ✔
+        📀👉📢 i😌n➖1👄 i 😁 1👄 i 😌 i ➖ 1👈🍽
+            🚩👉n 📎 i 😌😌 0👈🍽
+                flag 😌 ❌
+                ⏸
+            🥂
+        🥂
+        🚩👉flag👈🍽
+            🖨👉n👈
+        🥂
+    🥂
 
+💩Equivalent to
+💩decl start = 2, end = 100
+💩for(decl n = start; n <= end; n = n+1){
+💩  flag = true 
+💩  for(decl i = n-1; i > 1; i = i - 1){
+💩      if(n%i == 0){
+💩           flag = false
+💩      }
+💩  }   
+💩  if(flag){
+💩      print(n)
+💩  }
+💩}
 
-
+````
 
