@@ -1,17 +1,51 @@
-#program to calcualate 
-#and print the prime numbers
-#between the given the range [start, end]
+💩program to calcualate 
+💩and print the prime numbers
+💩between the given the range [start, end]
+💩 '{': 🍽
+💩 '}': 🥂
+💩 '(': 👉
+💩 ')': 👈
+💩 '#': 💩
+💩 'for' : 📀
+💩 ',': 🗿
+💩 'decl': 📢
+💩 'break' : ⏸
+💩 'continue': ⏩
+💩 ';' : 👄
+💩 'break' : ⏸
+💩 '<' : 😭
+💩 '>' : 😁
+💩 '>=': 😁😌
+💩 '<=': 😭😌
+💩 '==': 😌😌
+💩 '!=': ❗😌
+💩 '=': 😌
+💩 '+': ➕
+💩 '-': ➖
+💩 '*': ✖
+💩 '/': ➗
+💩 '%': 📎
+💩 'if': 🚩
+💩 'elif': 🏳
+💩 'else': 🏁
+💩 'true': ✔
+💩 'false': ❌
+💩 'print': 🖨
 
-decl start = 2, end = 100
-for(decl n=start; n <=end; n = n+1){
-    decl flag = true
-    for(decl i=n-1; i > 1; i = i - 1){
-        if (n mod i == 0){
-            flag = false
-            break
-        }
-    }
-    if(flag){
-        print(n)
-    }
-}
+
+
+
+
+📢 start 😌 2 🗿 end 😌 100
+📀👉📢 n😌start👄n😭😌end👄 n 😌 n➕1👈🍽
+    📢 flag 😌 ✔
+    📀👉📢 i😌n➖1👄 i 😁 1👄 i 😌 i ➖ 1👈🍽
+        🚩👉n 📎 i 😌😌 0👈🍽
+            flag 😌 ❌
+            ⏸
+        🥂
+    🥂
+    🚩👉flag👈🍽
+        🖨👉n👈
+    🥂
+🥂

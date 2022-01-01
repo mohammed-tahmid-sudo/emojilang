@@ -3,13 +3,13 @@ import lark
 # import sys
 
 from EmojiInterpreter import EmojiLangInterpeter
-
+from EmojiTransformer import EmojiLangTransformer
 
 
 if __name__ == "__main__":
     file, parser = None, None
     try:
-        file = open('./emojilang.lark', "r")
+        file = open('./emojiGrammar.lark', "r")
     except:
         print("STATUS:error in opening the file")
         sys.exit()
@@ -35,7 +35,9 @@ if __name__ == "__main__":
         tree = None
         tree = parser.parse(text)
         print(f"STATUS:{filName} Parsed Successfully")
-        # print(tree.pretty())
+        print(tree.pretty())
+        EmojiLangTransformer().visit(tree)
+        print(tree.pretty())
         runner = EmojiLangInterpeter(tree)
         runner.start()
         print(f"STATUS:{filName} ran without any interrupt")

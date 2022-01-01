@@ -1,0 +1,167 @@
+stmt: (_simple_stmt | _compound_stmt)* NEWLINE
+
+_simple_stmt: _small_stmt
+
+_small_stmt: assignment_stmt | flow_stmt | print_stmt | declare_stmt
+
+// assignment_stmt: name "=" exp
+assignment_stmt: name "😌" exp
+
+// declare_stmt: "decl" (_multipleassignment_stmt | name) ("," (_multipleassignment_stmt | name))*
+declare_stmt: "📢" (_multipleassignment_stmt | name) ("🗿" (_multipleassignment_stmt | name))*
+
+flow_stmt: break_stmt | continue_stmt
+
+// break_stmt: "break"
+break_stmt: "⏸"
+
+
+// continue_stmt: "continue"
+continue_stmt: "⏩"
+
+
+// print_stmt: "print" "(" (ESCAPED_STRING | exp) ")" 
+print_stmt: "🖨" "👉" (ESCAPED_STRING | exp) "👈" 
+
+
+_compound_stmt: if_stmt | while_stmt | for_stmt
+
+if_stmt: EIF "👉" exp "👈" "🍽" suite "🥂" (EELIF "👉" exp "👈"  "🍽" suite "🥂")* (EELSE "🍽" suite "🥂")?
+
+// while_stmt: "while" "(" for_test ")" "{" suite "}"
+while_stmt: "💿" "👉" for_test "👈" "🍽" suite "🥂"
+
+
+// for_stmt: "for" "(" for_decl ";" for_test";" for_updates ")" "{" suite "}"
+for_stmt: "📀" "👉" for_decl "👄" for_test"👄" for_updates "👈" "🍽" suite "🥂"
+
+
+for_decl: (declare_stmt | assignment_stmt)?
+
+for_test: exp?
+
+for_updates: _multipleassignment_stmt?
+
+_multipleassignment_stmt: assignment_stmt ("🗿" assignment_stmt)?
+
+suite: (_simple_stmt | _compound_stmt)* NEWLINE
+
+
+
+
+?castexpression: (_unaryoperator?)_argument
+
+?multiplicativeexpression: castexpression ((EMULT|EDIVIDE|EMOD) castexpression)*
+
+?additiveexpression: multiplicativeexpression ((EPLUS|EMINUS) multiplicativeexpression)*
+
+?equalityexpression: additiveexpression ((EEQU|ENOTEQ|ELESS|EGREA|EGREAE|ELESSE) additiveexpression)*
+
+?andexpression: equalityexpression ((EAND) equalityexpression)*
+
+?exclusiveorexpression: andexpression ((EXOR) andexpression)*
+
+?inclusiveorexpression: exclusiveorexpression ((EOR) exclusiveorexpression)*
+
+?logicalandexpression: inclusiveorexpression ((ELAND) inclusiveorexpression)*
+
+?logicalorexpression: logicalandexpression ((ELOR) logicalandexpression)*
+
+exp: logicalorexpression
+
+
+
+
+
+
+_unaryoperator: (ENOT|ECOMPLEMENT)
+
+_argument: boolean | number | name|("👉" exp "👈")
+
+boolean: ETRUE | EFALSE
+name: /[a-zA-z_][a-zA-Z0-9_]*/
+
+%import common.SIGNED_NUMBER
+%import common.WS
+%import common.NEWLINE
+%import common.ESCAPED_STRING
+number: SIGNED_NUMBER
+// ETRUE: "true"
+ETRUE: "✔"
+
+// EFALSE: "false"
+EFALSE: "❌"
+
+// EIF: "if"
+EIF: "🚩"
+
+// EELIF: "elif"
+EELIF: "🏳"
+
+// EELSE: "else"
+EELSE: "🏁"
+
+// EPLUS: "+"
+EPLUS: "➕"
+
+// EMINUS: "-"
+EMINUS: "➖"
+
+// EMULT: "*"
+EMULT: "✖"
+
+// EDIVIDE: "/"
+EDIVIDE: "➗"
+
+
+// ELESS: "<"
+ELESS: "😭"
+
+// EGREA: ">"
+EGREA: "😁"
+
+// EEQU: "=="
+EEQU: "😌😌"
+
+// EGREAE: ">="
+EGREAE: "😁😌"
+
+// ELESSE: "<="
+ELESSE: "😭😌"
+
+// ENOTEQ: "!="
+ENOTEQ: "❗😌"
+
+//EAND: "&"
+EAND: "⚛"
+
+// EOR: "|"
+EOR: "☯"
+
+// EXOR: "xor"|"^"
+EXOR: "⚓"
+
+// ENOT: "not"|"!"
+ENOT: "❗"
+
+EIN: "in"|"<-"
+ENOTIN: "not in"|"<->"
+
+// EMOD: "%"| "mod"
+EMOD: "📎"
+
+// ELOR: "||" | "or"
+ELOR: "😇"
+
+// ELAND: "&&" | "and"
+ELAND: "😠"
+
+// ECOMPLEMENT: "~"
+ECOMPLEMENT: "〰"
+
+
+COMMENT: "💩" /[^\n]/*
+
+
+%ignore WS
+%ignore COMMENT

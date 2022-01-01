@@ -1,14 +1,12 @@
-decl a = 5 # I just declared the variable
-# Right now it supports only single line comment
-
-for(; a < 10 ; a = a + 1){
-    # comment inside the for loop body
-    print(a)
-    # this should the following output:
-    # 5
-    # 6
-    # 7
-    # 8
-    # 9
-
-}
+📢 a 😌 👉5➕5👈 
+💩 this is comment 😂
+💩 comment starts with 💩
+🚩👉a 😭😌 7👈🍽
+    🖨👉a👈
+🥂
+🏳👉a 😌😌 5👈🍽
+    🖨👉a ➕ 5👈
+🥂
+🏁🍽
+    🖨👉a ✖ 10👈
+🥂
