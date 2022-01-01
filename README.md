@@ -1,10 +1,27 @@
 # emojilang
 Programming language where you can code using emojis 😌
 
-#### To install dependencies
-```bash
-pip install -r requirements.txt
-```
+### To execute
+First make sure you have python(version 3.x) and pip installed
+#### First clone it
+````bash
+    #First Clone It
+    git clone https://github.com/grininja/emojilang.git emojilang
+    pip install -r requirements.txt
+    #Navigate into the directory
+    cd emojilang
+````
+
+#### Then execute the your source file
+````bash
+    python main.py <Your File Path>
+    # for example
+    python main.py /tests/firstPrimes.emo
+````
+Or 
+````bash
+    python3 main.py /tests/firstPrimes.emo
+````
 
 ### Syntax
 
