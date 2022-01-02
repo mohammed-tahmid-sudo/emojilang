@@ -9,7 +9,7 @@ from EmojiTransformer import EmojiLangTransformer
 if __name__ == "__main__":
     file, parser = None, None
     try:
-        file = open('./emojiGrammar.lark', "r")
+        file = open(os.path.join("emojiGrammar.lark"), "r", errors="ignore", encoding="utf8")
     except:
         print("STATUS:error in opening the file")
         sys.exit()
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     parser = lark.Lark(file, start="stmt")
     print("STATUS:Parser Generated Succesfully")
     print('-----------------------------------------------------------------------------')
-    testFileNames = os.listdir('./tests')
+    testFileNames = os.listdir(os.path.join("tests"))
     isTest = True
     if len(sys.argv) > 1:
         testFileNames = sys.argv[1:]
@@ -29,12 +29,15 @@ if __name__ == "__main__":
         try:
             if filName.endswith(".emo"):
                 if isTest:
-                    text = pathlib.Path(f"./tests/{filName}").read_text()
+                    text = pathlib.Path(os.path.join("tests", filName)).read_text(errors="ignore", encoding="utf8")
                 else:
-                    text = pathlib.Path(f"./{filName}").read_text()
+                    text = pathlib.Path(os.path.join(filName)).read_text(errors="ignore", encoding="utf8")
+            else:
+                print("Please give a valid file to execute ...that ends with .emo")
+                sys.exit()
         except:
             if isTest:
-                print(f"STATUS:error in reading the file /tests/{filName}")
+                print(f"STATUS:error in reading the file tests/{filName}")
             else:
                 print(f"STATUS:error in reading the file /{filName}")
             sys.exit()
