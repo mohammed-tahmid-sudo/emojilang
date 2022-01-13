@@ -13,7 +13,7 @@ First make sure you have python(version 3.x) and pip installed
     pip install -r requirements.txt
 ````
 
-#### Then execute the your source file
+#### Then execute your source file
 ````bash
     python main.py <Your File Path>
     # for example
