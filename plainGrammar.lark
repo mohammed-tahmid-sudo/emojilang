@@ -14,7 +14,7 @@ break_stmt: "break"
 
 continue_stmt: "continue"
 
-print_stmt: "print" "(" (ESCAPED_STRING | exp) ")" 
+print_stmt: "print" "(" ("\"" string "\"" | exp) ")" 
 
 _compound_stmt: if_stmt | while_stmt | for_stmt
 
@@ -66,10 +66,11 @@ exp: logicalorexpression
 
 _unaryoperator: (ENOT|ECOMPLEMENT)
 
-_argument: boolean | number | name|("(" exp ")")
+_argument: boolean | number | name |("(" exp ")")
 
 boolean: ETRUE | EFALSE
 name: /[a-zA-z_][a-zA-Z0-9_]*/
+string: ESCAPED_STRING
 
 %import common.SIGNED_NUMBER
 %import common.WS

@@ -21,7 +21,7 @@ continue_stmt: "⏩"
 
 
 // print_stmt: "print" "(" (ESCAPED_STRING | exp) ")" 
-print_stmt: "🖨" "👉" (ESCAPED_STRING | exp) "👈" 
+print_stmt: "🖨" "👉" ( string | exp) "👈" 
 
 
 _compound_stmt: if_stmt | while_stmt | for_stmt
@@ -80,7 +80,7 @@ _argument: boolean | number | name|("👉" exp "👈")
 
 boolean: ETRUE | EFALSE
 name: /[a-zA-z_][a-zA-Z0-9_]*/
-
+string: ESCAPED_STRING
 %import common.SIGNED_NUMBER
 %import common.WS
 %import common.NEWLINE

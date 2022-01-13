@@ -60,7 +60,8 @@ class EmojiLangInterpeter(Interpreter):
     def stmt(self, tree):
         self.visit_children(tree)
         
-
+    def string(self, tree):
+        return tree.children[0].value
 
     def name(self, tree: Tree):
         # return 1

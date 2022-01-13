@@ -194,4 +194,4 @@ Or
 💩}
 
 ````
-
+**_NOTE:_**  The original repository is where we will add new features to the base language(YAIL) this repo is for emoji extension(EMOJILANG).
